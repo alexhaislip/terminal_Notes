@@ -1,0 +1,16 @@
+Change Directory
+
+	cd <dir> - change directory
+	cd .. - go to parent directory
+
+File And Directory Management:
+
+	mkdir <dir name> - make new directory
+	touch <filename> - make new file
+
+	mv <filename> <filename> - rename file in current directory
+	mv <filename> <dir> - move file into directory
+	rm <filename> - delete file
+	rm -rf <dir> - delete directory - Careful with this
+	
+
