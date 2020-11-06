@@ -1,3 +1,4 @@
+EMACS MODE:
 Moving the cursor
 CTRL-A/HOME: Move to the beginning of a line.
 CTRL-E/END: Move to the end of a line.
@@ -40,3 +41,32 @@ Accessing Command History
 CTRL-R: Search the command history. Accept with ENTER/RETURN, abort with CTRL-G.
 CTRL-P/UP: The previous command in history.
 CTRL-N/DOWN: The next command in history.
+
+VI MODE
+Just like any vi-based editor, vi mode operates in either insert mode (keys produce text on the screen) or normal mode (keys represent editing commands).
+
+Commands
+To switch to normal mode, press ESC or CTRL-[, by default, there won’t be any visual indication about which mode is currently active. If you want to switch back to insert mode, just like vi, press a (or A, i, I, depending on where you want the cursor to be).
+For more commands, see this cheat sheet.
+So, in vi mode, if you want to delete the whole line, you press ESC (to switch to command mode), dd (to delete the line), and a (to switch back to insert mode).
+Depending on your shell, or if you have any plugins, some of the Emacs-based shortcuts might work when in insert mode.
+Why not both?
+If you, like me, like both modes, there’s a really good Zsh plugin that not only enhances vi mode with more features like mode visual indicator and support for surround bindings, but also makes most of the Emacs key bindings available.
+
+Custom Keyboard Shortcuts
+It’s easy to add your own keyboard shortcuts. If you are not sure what code represents a key combination (e.g ALT-Z is ^[z), first press CTRL-V followed by the key combination.
+Line editor commands
+For a list of Zsh-bindable commands, visit this site, for Bash’s, visit this site.
+For example, to bind undo to ALT-Z:
+# zsh
+bindkey '^[z' undo
+# bash
+bind '"^[z":undo'
+Macros
+You can also bind strings:
+# zsh
+bindkey -s '^[[24~' 'You`ve just pressed F12'
+# bash
+bind '"\e[24~":"You`ve just pressed F12"'
+Shell commands
+You can also define key bindings to execute shell commands without affecting the current command line.
