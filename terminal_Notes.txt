@@ -14,3 +14,161 @@ File And Directory Management:
 	rm -rf <dir> - delete directory - Careful with this
 	
 
+1. Change Directory
+Command: cd
+
+What it does: Changes the directory of the command line path.
+
+Example: cd "path/to/directory/" (Figure A)
+
+Figure A
+
+terminalcommandsfiga021116.jpg
+Image: Jesus Vigo/TechRepublic
+2. Listing Directory
+Command: ls
+
+What it does: Lists the contents of a directory.
+
+Example: ls "path/to/directory/" (Figure B)
+
+Figure B
+
+terminalcommandsfigb021116.jpg
+Image: Jesus Vigo/TechRepublic
+3. Open files
+Command: open
+
+What it does: Opens a file.
+
+Example: open "filename" (Figure C)
+
+Figure C
+
+terminalcommandsfigc021116.jpg
+Image: Jesus Vigo/TechRepublic
+4. Copy a file to another directory
+Command: cp
+
+Example: cp "filename" "newfilename" (Figure D)
+
+Figure D
+
+terminalcommandsfigd021116.jpg
+Image: Jesus Vigo/TechRepublic
+5. Move a file
+Command: mv
+
+Example: mv "filename" "path/to/new/file/location" (Figure E)
+
+Figure E
+
+terminalcommandsfige021116.jpg
+Image: Jesus Vigo/TechRepublic
+6. Renaming a file
+Command: mv
+
+Example: mv "path/to/filename" "path/to/newfilename" (Figure F)
+
+Figure F
+
+terminalcommandsfigf021116.jpg
+Image: Jesus Vigo/TechRepublic
+7. Create a directory
+Command: mkdir
+
+Example: mkdir "path/to/new/directory" (Figure G)
+
+Figure G
+
+terminalcommandsfigg021116.jpg
+Image: Jesus Vigo/TechRepublic
+8. Remove an empty directory
+Command: rmdir
+
+Example: rmdir "path/to/directory" (Figure H)
+
+Figure H
+
+terminalcommandsfigh021116.jpg
+Image: Jesus Vigo/TechRepublic
+9. Remove nested directories
+Command: rm -R
+
+Example: rm -R "/path/to/root/directory" (Figure I)
+
+Figure I
+
+terminalcommandsfigi021116.jpg
+Image: Jesus Vigo/TechRepublic
+10. Execute commands with superuser privileges
+Command: sudo
+
+Example: sudo "command" (Figure J)
+
+Figure J
+
+terminalcommandsfigj021116.jpg
+Image: Jesus Vigo/TechRepublic
+11. List actively running computer processes
+Command: top
+
+Example: top (Figure K)
+
+Figure K
+
+terminalcommandsfigk021116.jpg
+Image: Jesus Vigo/TechRepublic
+12. Quit sub-screen and return to Terminal
+Command: q
+
+Example: After executing a command, such as "top" to view active processes, press "q" to exit. (Figure L)
+
+Figure L
+
+terminalcommandsfigl021116.jpg
+Image: Jesus Vigo/TechRepublic
+13. Clear the Terminal screen of all previous commands
+Command: Clear
+
+Example: clear (Figure M)
+
+Figure M
+
+terminalcommandsfigm021116.jpg
+Image: Jesus Vigo/TechRepublic
+14. Get help for a command
+Command: help
+
+Example: help "command" (Figure N)
+
+Figure N
+
+terminalcommandsfign021116.jpg
+Image: Jesus Vigo/TechRepublic
+15. Get one-line description for a command
+Command: whatis
+
+Example: whatis "command" (Figure O)
+
+Figure O
+
+terminalcommandsfigo021116.jpg
+Image: Jesus Vigo/TechRepublic
+16. Show manual page for a command
+Command: man
+
+Example: man "command" (Figure P)
+
+Figure P
+
+terminalcommandsfigp021116.jpg
+Image: Jesus Vigo/TechRepublic
+The "exit" command
+A special note goes out to the "exit" command, which closes the Terminal session.
+
+Command: exit
+
+Example: exit (Figure Q)
+
+Figure Q
