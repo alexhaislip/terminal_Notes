@@ -1,0 +1,124 @@
+qx or backticks - running external command and capturing the output
+ PrevNext 
+People knowing shell are familiar with the back-ticks `` that allow us to execute external commands and capture their output. In Perl you can use the back-ticks or the qx operator that does exactly the same, just makes the code more readable.
+
+In Perl there are several ways to run external programs depending on your needs. For example you can use system to run external programs without capturing output. This time we look at the backticks and qx.
+
+The external program
+The external program can be anything and it can be written in any language. To make it clearer however I've prepared a sample external program in perl:
+
+examples/external.pl
+
+#!/usr/bin/env perl
+use strict;
+use warnings;
+ 
+print("Hello\n");
+warn("Some warning to STDERR\n");
+print("World\n");
+If you run this on the command line you get the following on the screen:
+
+examples/external.txt
+
+Hello
+Some warning to STDERR
+World
+Two lines are printed to STDOUT and one line to STDERR, but on the command line you can't tell them apart. (You could use SCALAR and LIST context if you'd like to know the distinction.)
+
+examples/capture_stdout_backtick_scalar.pl
+
+use strict;
+use warnings;
+ 
+my $out = `./external.pl`;
+print ("==$out==\n");
+ 
+The STDERR will be printed directly to the screen untouched by the backticks. If the STDOUT has multiple lines (as in our case), they will still form a single multi-line string in the capturing code:
+
+examples/capture_stdout_backtick_scalar.txt
+
+Some warning to STDERR
+==Hello
+World
+==
+
+qx in scalar context
+Instead of the backticks that are hard to see and hard to search for, we can use the qx operator of perl.
+
+At first it looks like a strangely-named function:
+
+examples/capture_stdout_qx_scalar.pl
+
+use strict;
+use warnings;
+ 
+my $out = qx(./external.pl);
+print ("==$out==\n");
+ 
+The results are exactly the same:
+
+examples/capture_stdout_qx_scalar.txt
+
+Some warning to STDERR
+==Hello
+World
+==
+However qx allows any pair of delimiters so you could use curly braces instead of parentheses and that would still do the exact same thing:
+
+examples/capture_stdout_qx_scalar_curly.pl
+
+use strict;
+use warnings;
+ 
+my $out = qx{./external.pl};
+print ("==$out==\n");
+ 
+Backtick `` in list context
+Instead of assigning to a scalar variable we can also assign the backtick to an array, putting it in LIST context.
+
+(See SCALAR and LIST context if you'd like to know the distinction.)
+
+examples/capture_stdout_backtick_array.pl
+
+use strict;
+use warnings;
+ 
+my @out = `./external.pl`;
+print ("==$out[0]==\n");
+ 
+print ("==$out[1]==\n");
+ 
+In this case whatever the external program printed to STDOUT is split into rows and are assigned to the array. Each row is a separate line in the resulting array. So the number of elements in the array is the number of rows on the STDOUT.
+
+examples/capture_stdout_backtick_array.txt
+
+Some warning to STDERR
+==Hello
+==
+==World
+==
+
+qx in list context
+The same can be done with the qx operator.
+
+examples/capture_stdout_qx_array.pl
+
+use strict;
+use warnings;
+ 
+my @out = qx{./external.pl};
+print ("==$out[0]==\n");
+ 
+ 
+And the output:
+
+examples/capture_stdout_qx_array.txt
+
+Some warning to STDERR
+==Hello
+==
+Use case
+See How to provide STDIN to an external executable as a use-case.
+
+Blocking
+They block the main process and wait till the external program finished so it can collect all the output.
