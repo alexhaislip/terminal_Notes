@@ -1,3 +1,34 @@
+Ditto
+A hidden gem in OS X is Apple’s ditto command. I’ve found this incredibly useful in copying large amounts of data as it can run within a Terminal window that contains more useful information about its progress than the more traditional Finder copy window.
+
+1
+$ ditto -V /old/work/ /new/work/
+The above command will copy our “work” folder to a new location. Actually, what happens is the command copies the contents of our “work” folder to a new “work” folder.
+
+Adding -V, meaning verbose prints a line to the Terminal window for every file that’s being copied. It’s extremely useful as you can see exactly what file is being copied at any time.
+
+Ditto is a command I use frequently and have often copied many gigabytes of data between hard drives using it because it seems to be so reliable.
+
+
+
+
+Working with Directories:
+ls - list / list the contents on your current directory
+la -la - Give more informations about list 
+pwd - Print Working directory / Print the path to the working directory
+cd directory - Change directory / Move between folders - Relative Path (just folters directly contained in the one you are currently)
+cd /firstDirectory/secondDirectory/FinalDirectory - Absolute Path (search a directory anywhere in pc)
+cd .. - Go back a directory
+cd ~ - return to home directory
+mkdir - make directory / create a new directory+
+mkdir -v - Make directory + add lines that say you created a directory
+touch - Create a file (or multiple) or "touch", change a file (update when it was last modified)
+rm - Remove / Delete a File (forever)
+rm -rf - Remove recursive force / Delete a directory add all file nested in the directory (also other directories)
+rmdir - remove a directory (only work on empty folders)
+
+
+
 Change Directory
 
 	cd <dir> - change directory
