@@ -9,6 +9,39 @@ Adding -V, meaning verbose prints a line to the Terminal window for every file t
 
 Ditto is a command I use frequently and have often copied many gigabytes of data between hard drives using it because it seems to be so reliable.
 
+Stress Test Your Mac
+If you’re wanting to run some stress tests on your Mac, there’s a simple command we can enter that will instantly utilise 100% of your CPU:
+
+1
+$ yes
+Apple technicians use this frequently when dealing with troublesome Macs that might be crashing under load and it’s a very quick way of stressing a Mac. To cancel the command, press Ctrl-C.
+
+
+
+Display A Custom Message At The Login Window
+When using a multi-user Mac, it’s often good to have a message display to provide some useful information, such as “Hey, sticky hands! Others have to use this keyboard, y’know.”
+
+1
+$ sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Hey, Sticky Hands!"
+Next time you log out or restart your Mac, your message will appear. To remove the message entirely:
+
+1
+$ sudo defaults delete /Library/Preferences/com.apple.loginwindow LoginwindowText
+
+
+View File System Usage
+Sometimes we want to see what our Mac is doing when it comes to reading and writing to disk, especially if we’re trying to identify something that’s preventing us from ejecting a drive. To do this, we use:
+
+1
+$ sudo fs_usage
+By entering sudo, we are requesting to run this as a super user, which requires entering our Mac’s login password. Once done, you’re presented with a constant stream of information as processes are accessing your disk.
+
+Some processes you are likely to see are Time Machine (backupd) and Spotlight (mds).
+
+To cancel, you can press Ctrl-C.
+
+
+
 
 
 
